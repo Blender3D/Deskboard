@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <script src="jquery.min.js"></script>
+    <script>
+			$(document).ready(function() {
+			  music.playback_changed.connect(function(state) {
+			    $('#playback-state').text(state);
+			  });
+
+			  setInterval(function() {
+				  $('#cpu-usage').text(system.cpu.usage);
+			  }, 1000);
+
+			  desktop.launchers.forEach(function(launcher) {
+			    $('<div />', {text: launcher.name}).appendTo('body');
+			  });
+			});
+    </script>
+
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+  	<div id="playback-state">None</div>
+  	<div id="cpu-usage">0</div>
+  </body>
+</html>

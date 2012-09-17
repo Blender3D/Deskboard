@@ -1,0 +1,113 @@
+@import 'fonts/Droid Sans/font.css';
+@import 'fonts/Open Sans/font.css';
+//@import 'jquery.gridster.css';
+
+@grid-unit: 325px;
+@letter-size: 36px;
+
+* {
+	-webkit-user-select: none;
+	-webkit-box-sizing: border-box;
+	cursor: default;
+}
+
+iframe {
+	display: block;
+}
+
+html {
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+
+	background-color: rgb(20, 20, 20);
+	background-image: url('../images/background-dark.png');
+
+	color: white;
+	font-size: 30px;
+}
+
+.clock {
+	* {
+		margin: 0;
+		padding: 0;
+	}
+
+	.row {
+		.word {
+			display: inline-block;
+		
+			color: rgba(50, 50, 50, 0.9);
+			text-shadow: 0px 0px 6px rgb(10, 10, 10);
+
+			-webkit-transition: all 0.4s;
+
+			&.highlighted {
+				color: rgb(250, 250, 250);
+				text-shadow: 0px 0px 7px white;
+			}
+
+			.letter {
+				font-family: 'Droid Sans';
+				display: inline-block;
+
+				width: @letter-size;
+				height: @letter-size;
+
+				font-size: 0.7 * @letter-size;
+				text-align: center;
+			}
+		}
+	}
+
+	#clock-oclock {
+		position: relative;
+
+		&:before {
+			content: "'";
+			position: absolute;
+
+			font-size: @letter-size;
+
+			top: 0;
+			left: 16.666%;
+		}
+	}
+}
+
+.gridster {
+	ul {
+		list-style: none;
+
+		.preview-holder {
+			opacity: 0.1;
+		}
+	}
+}
+
+.box {
+	box-shadow: 0px 0px 16px rgb(10, 10, 10);
+
+	background-color: rgb(20, 20, 20);
+	background-image: url('../images/background.png');
+
+	display: -webkit-box;
+	-webkit-box-pack: center;
+	-webkit-box-align: center;
+
+	.label, .unit {
+		color: rgb(150, 150, 150);
+	}
+
+	.value {
+		color: rgb(250, 250, 250);
+		text-shadow: 0px 0px 7px white;
+	}
+}
